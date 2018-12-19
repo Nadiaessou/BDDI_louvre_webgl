@@ -13,23 +13,58 @@
     src: url("../font/LibreBaskerville-Italic.ttf");
   }
 
-html {
+/* html {
     scroll-behavior: smooth;
-}
+} */
+
+/** ANIMATION TEXTE **/
+
+
+.splitting .char {
+    animation: slide-in 6s cubic-bezier(.5, 0, .5, 1) both;
+    animation-delay: calc(60ms * var(--char-index));
+  }
+  
+  @keyframes slide-in {
+    from {
+      transform: translateX(1em);
+      opacity: 0;
+    }
+  }
+
+/** GENERAL **/
 
 #bruit {
     width: 100%;
     height: 100vh;
     opacity: 0.6;
-    top: 0;
+    top: 0.5px;
     position: fixed;
     background-image: url(../img/Bruit.png);
     background-repeat: repeat;
-    animation: bruit 2s infinite linear ;
+    animation: bruit 0.6s infinite;
 }
 
 @keyframes bruit {
+    0% {
+        top: 0.1px;
+    }
+    100% {
+        top: 0.5px;
+    }
+}
 
+
+#cadre {
+    background-image: url(../img/cadre.png);
+    background-size: 100% 90vh;
+    left: 4vh;
+    right: 4vh;
+    top: 5vh;
+    height: 120vh;
+    position: fixed;
+    background-repeat: no-repeat;
+    transition: all 2s;
 }
 
 body {
@@ -46,16 +81,46 @@ body {
 
 /** SECTION INTRO **/
 
-#cadre {
-    background-image: url(../img/cadre.png);
-    background-size: 100% 90vh;
-    height: 90vh;
-    left: 4vh;
-    right: 4vh;
-    top: 5vh;
-    position: fixed;
-    background-repeat: no-repeat;
+#intro {
+    animation: fondu 5s;
 }
+
+#cadre {
+    animation: fondu 8s;
+}
+
+@keyframes fondu {
+    from {
+        opacity: 0;
+    }
+    20% {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+/* .mini_fumee {
+    width: 100%;
+    top: 75vh;
+    left: 0;
+    position: absolute;
+    animation: anim 10s infinite linear;
+}
+
+@keyframes anim {
+    from {
+        top: 75vh;
+    }
+    50% {
+        top: 71vh;
+    }
+    to {
+        top: 75vh;
+    }
+} */
 
 #intro {
     text-align: center;
@@ -191,11 +256,11 @@ a:hover {
 
 .bloc {
     width: 700px;
-    height: 150px;
+    height: 175px;
     overflow: hidden;
     color:#d1be66;
     text-align: center;
-    line-height: 25pt;
+    line-height: 24pt;
     font-family: "LibreBaskerville-Regular", Helvetica, Arial, sans-serif;
 }
 
