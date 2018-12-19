@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="fr">
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title></title>
+      <link rel="stylesheet" href="css/styles.css">
+   </head>
+
+   <body>
+    <!--BRUIT-->
+       <div id="bruit">
+       </div>
+
+    <!--CADRE-->
+       <div id="cadre">
+       </div>
+
+    <!--SECTION INTRO-->
+        <section id="intro">
+            <div class="texte">
+                <img src="img/LOGO.png" alt="afterlife" width="47%">
+                <p class="stitre">Accompagnez Tamoutneferet lors de son voyage vers l’au-delà.</p>
+                <a href="#presentation" class="button" id="commence">Commencer l'expérience</a>
+            </div>
+            <div class="footer">
+                <a href="#" class="credit">Crédits</a>
+                <div class="sound"></div>
+            </div>
+        </section>
+
+    <!--PRESENTATION-->
+        <section id="presentation">
+            <div class="sarcophage">
+                <!-- <img src="img/sarcophage.png"> -->
+                <div id="sarcophage3D"></div>
+            </div>
+            <div class="texte">
+                    <div class="bloc"><span>Accompagnez Tamouthnéferet lors de son voyage vers l’au-delà. <br> Vel impetrare ab iis, quidquid velimus, perfecta quidem sapientia si simus.</span></div>
+                    <a href="#presentation" class="button">Passer </a>
+            </div>
+        </section>
+
+    <!--FUMEE-->
+        <canvas id="canvas"></canvas>
+
+
+        <script src="js/three/three.js"></script>
+        <script src="js/three/OBJLoader.js"></script>
+        <script src="js/sarcophage.js"></script>
+        <script src="js/fumee.js"></script>
+        <!-- <script src="js/script.js"></script> -->
+   </body>
+
+</html>
