@@ -38,19 +38,28 @@
                 <div id="sarcophage3D"></div>
             </div>
             <div class="texte">
-                    <div class="bloc"><span data-splitting class="phrase1">Il y a bien longtemps, j’étais chanteuse d’Amon, le roi de Thèbes.</span>
+                    <div id="bloc"><span data-splitting class="phrase1">Il y a bien longtemps, j’étais chanteuse d’Amon, le roi de Thèbes.</span>
                                        <span data-splitting class="phrase2">Accompagnée par des musiciens et des danseurs, je chantais dans le temple lors de divers rituels.</span>
                                         <span data-splitting class="phrase3">Après mon décès, mon corps fut embaumé puis placé dans ce sarcophage de bois.</span>
                                         <span data-splitting class="phrase4">Ce procédé est réservé aux classes supérieures, il est nécessaire pour assurer mon voyage vers l'au-delà.</span>
-                                        <span data-splitting class="phrase5">Bien. Maintenant que tu connais mon histoire, il est temps de partir : Anubis nous attend…</span>
+                                        <span data-splitting class="phrase5">Bien. Maintenant que tu connais mon histoire, il est temps de partir :<br> Anubis nous attend…</span>
                                         </div>
-                    <a href="#presentation" class="button">Passer </a>
+                    <a href="#presentation" class="button" id="button_go">Passer </a>
             </div>
         </section>
 
     <!--FUMEE-->
         <canvas id="canvas"></canvas>
 
+
+
+
+        <!--SCROLL TOP AFTER RELOAD-->
+        <script>
+            window.onbeforeunload = function () {
+            window.scrollTo(0, 0);
+            }
+        </script>
 
         <script src="js/three/three.js"></script>
         <script src="js/three/OBJLoader.js"></script>
@@ -59,8 +68,8 @@
         <script src="js/fumee.js"></script>
 
         <link rel="stylesheet" href="https://unpkg.com/splitting/dist/splitting.css" />
-<link rel="stylesheet" href="https://unpkg.com/splitting/dist/splitting-cells.css" />
-<script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
+        <link rel="stylesheet" href="https://unpkg.com/splitting/dist/splitting-cells.css" />
+        <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
 
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>

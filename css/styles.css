@@ -21,8 +21,8 @@
 
 
 .splitting .char {
-    animation: slide-in 6s cubic-bezier(.5, 0, .5, 1) both;
-    animation-delay: calc(60ms * var(--char-index));
+    animation: slide-in 3s cubic-bezier(.5, 0, .5, 1) both;
+    animation-delay: calc(40ms * var(--char-index));
   }
   
   @keyframes slide-in {
@@ -30,6 +30,14 @@
       transform: translateX(1em);
       opacity: 0;
     }
+  }
+
+  .phrase1,
+  .phrase2,
+  .phrase3,
+  .phrase4,
+  .phrase5 {
+      display: none;
   }
 
 /** GENERAL **/
@@ -101,27 +109,6 @@ body {
     }
 }
 
-
-/* .mini_fumee {
-    width: 100%;
-    top: 75vh;
-    left: 0;
-    position: absolute;
-    animation: anim 10s infinite linear;
-}
-
-@keyframes anim {
-    from {
-        top: 75vh;
-    }
-    50% {
-        top: 71vh;
-    }
-    to {
-        top: 75vh;
-    }
-} */
-
 #intro {
     text-align: center;
     position: absolute;
@@ -153,7 +140,7 @@ a {
 }
 
 a:hover {
-    color: white;
+    color: #ffffff;
 }
 
 
@@ -254,7 +241,7 @@ a:hover {
     background-image: url("../img/button_passer_blanc.png");
 }
 
-.bloc {
+#bloc {
     width: 700px;
     height: 175px;
     overflow: hidden;
@@ -262,17 +249,19 @@ a:hover {
     text-align: center;
     line-height: 24pt;
     font-family: "LibreBaskerville-Regular", Helvetica, Arial, sans-serif;
+    display: none;
 }
 
 /** CANVAS **/
 
 #canvas {
-    width: 100%!important;
-    height: 100vh!important;
+    width: 180%!important;
+    height: 200vh!important;
+    top: 0;
     position: absolute;
     margin: 0;
     padding: 0;
-    opacity: 0.5;
+    opacity: 0.35;
     background: transparent;
 }
 

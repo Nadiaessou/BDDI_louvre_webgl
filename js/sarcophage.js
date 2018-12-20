@@ -31,7 +31,7 @@
 				// LIGHTS
 
 				var intensity = 2.0;
-				var distance = 150;
+				var distance = 350;
 				var decay = 2.0;
 				
 				var spotLight = new THREE.SpotLight( 0xffffff,1 );
@@ -94,11 +94,13 @@
 
 					} );
 
+
+					/* DEBOUT */
 					object.position.y = 50;
 					object.rotation.y = Math.PI/2;
 					object.rotation.z = - Math.PI/2;
 					object.scale = THREE.Vector3(0.1,0.1,0.1 )
-					
+
 					scene.add( object );
 
 				}
@@ -178,16 +180,50 @@
 			//
 
 			function animate() {
-
 				requestAnimationFrame( animate );
 				render();
 
 			}
 
+
+
+
+
+
 			function render() {
 
 				camera.position.x += ( mouseX - camera.position.x ) * .05;
-				 camera.position.y += ( - mouseY - camera.position.y ) * .05;
+				// camera.position.y += ( - mouseY - camera.position.y ) * .05;
+
+				let timer = Date.now() / 1000;
+
+
+
+				/*** pivoter le sarcophage ***/
+				var button_go = document.getElementById('button_go');
+				var bloc = document.getElementById('bloc');
+				var cadre = document.getElementById('cadre');
+
+				button_go.onclick = function(){
+					bloc.style.display = "none";
+					button_go.style.display = "none";
+
+					/* ALLONGE */
+					camera.position.y = -300;
+					camera.position.x = 1000;
+					
+					object.position.y = -200;
+					object.rotation.y = 300;
+					object.rotation.x = 0;
+					object.rotation.z = Math.PI/6;
+
+					// cadre.style.backgroundSize = "100% 90vh";
+					// cadre.style.left = "4vh";
+					// cadre.style.right = "4vh";
+					// cadre.style.top = "5vh";
+				}
+
+
 
 				camera.lookAt( scene.position );
 
@@ -224,6 +260,8 @@
 				light6.position.x = Math.cos( time * 0.7 ) * d;
 				light6.position.z = Math.cos( time * 0.5 ) * d;
 				light6.position.y = Math.cos( time * 0.5 ) * d;
+
+
 
 				renderer.render( scene, camera );
 

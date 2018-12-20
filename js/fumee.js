@@ -16,7 +16,7 @@ class smokeParticle {
   
   init() {
     this.imgQuantity = 500;
-    this.maxSize = 450;
+    this.maxSize = 350;
     this.imgVelocity = 0.09;
     this.smokeOne = new Image();
     this.smokeTwo = new Image();
