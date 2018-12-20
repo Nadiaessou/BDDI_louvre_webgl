@@ -22,7 +22,7 @@
 
 .splitting .char {
     animation: slide-in 3s cubic-bezier(.5, 0, .5, 1) both;
-    animation-delay: calc(40ms * var(--char-index));
+    animation-delay: calc(20ms * var(--char-index));
   }
   
   @keyframes slide-in {
@@ -90,11 +90,17 @@ body {
 /** SECTION INTRO **/
 
 #intro {
+    text-align: center;
+    position: absolute;
+    left: 4vh;
+    right: 4vh;
+    top: 5vh;
+    z-index: 10;
     animation: fondu 5s;
 }
 
 #cadre {
-    animation: fondu 8s;
+    animation: fondu 5s;
 }
 
 @keyframes fondu {
@@ -107,15 +113,6 @@ body {
     to {
         opacity: 1;
     }
-}
-
-#intro {
-    text-align: center;
-    position: absolute;
-    left: 4vh;
-    right: 4vh;
-    top: 5vh;
-    z-index: 10;
 }
 
 .texte {
@@ -148,12 +145,12 @@ a:hover {
     text-transform: uppercase;
     background-image: url("../img/button_commencer.png");
     font-family: "Fabrik", Helvetica, Arial, sans-serif;
-    font-size: 13px;
-    letter-spacing: 1pt;
+    font-size: 14px;
+    letter-spacing: 1.5pt;
     padding-left: 60px;
     padding-right: 60px;
     padding-bottom: 40px;
-    padding-top: 30px;
+    padding-top: 33px;
     margin-top: 75px;
     background-size: contain;
     background-repeat: no-repeat;
@@ -242,14 +239,45 @@ a:hover {
 }
 
 #bloc {
+    font-size: 20px;
     width: 700px;
     height: 175px;
     overflow: hidden;
-    color:#d1be66;
+    color:#e9e3c4;
     text-align: center;
     line-height: 24pt;
-    font-family: "LibreBaskerville-Regular", Helvetica, Arial, sans-serif;
+    font-family: "LibreBaskerville", Helvetica, Arial, sans-serif;
     display: none;
+}
+
+#scroller {
+text-align: center;
+font-family: "Fabrik", Helvetica, Arial, sans-serif;
+font-size: 13px;
+letter-spacing: 1.5pt;
+color: #d1be66;
+text-transform: uppercase;
+line-height: 16pt;
+opacity: 0;
+}
+
+@keyframes fondu {
+    0% {
+        opacity: 0;
+    }
+    30% {
+        opacity: 1;
+    }
+    70% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+#scroller img {
+    width: 30px;
 }
 
 /** CANVAS **/
@@ -261,10 +289,46 @@ a:hover {
     position: absolute;
     margin: 0;
     padding: 0;
-    opacity: 0.35;
+    opacity: 0.4;
     background: transparent;
 }
 
 #sarcophage3D{
     margin-top: 100vh;
+}
+
+/** INTERACTION ANUBIS **/
+
+#blocAnubis {
+    position: absolute;
+    top: 90vh;
+    font-size: 18px;
+    width: 700px;
+    overflow: hidden;
+    color:#e9e3c4;
+    text-align: center;
+    line-height: 24pt;
+    font-family: "LibreBaskerville", Helvetica, Arial, sans-serif;
+}
+
+.phrase6,
+.phrase7,
+.phrase8 {
+    display: none;
+}
+
+
+.interlocuteur {
+    color: #d1be66;
+    display: none;
+}
+
+#anubis {
+    top: 75vh;
+    position: absolute;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
