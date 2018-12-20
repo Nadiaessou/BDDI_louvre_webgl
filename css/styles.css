@@ -96,14 +96,14 @@ body {
     right: 4vh;
     top: 5vh;
     z-index: 10;
-    animation: fondu 5s;
+    animation: fonduAccueil 5s;
 }
 
 #cadre {
-    animation: fondu 5s;
+    animation: fonduAccueil 5s;
 }
 
-@keyframes fondu {
+@keyframes fonduAccueil {
     from {
         opacity: 0;
     }
@@ -324,6 +324,55 @@ opacity: 0;
 }
 
 #anubis {
+    top: 75vh;
+    position: absolute;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+#jeu {
+    position: absolute;
+    top: 130vh;
+    left: 11vh;
+    display: none;
+    z-index: 100;
+}
+
+#jeu img {
+    position: absolute;
+    cursor: pointer;
+}
+
+.obj1 {
+    left: 6vh;
+    top: 14vh;
+}
+
+.obj2 {
+    left: 31vh;
+    top: -13vh;
+}
+
+.obj3 {
+    left: 23vh;
+    top: 3vh;
+}
+
+.obj4 {
+    left: 32vh;
+    top: 24vh;
+}
+
+.obj5 {
+    left: 11vh;
+    top: -10vh;
+}
+
+.indication {
     top: 75vh;
     position: absolute;
     left: 0;

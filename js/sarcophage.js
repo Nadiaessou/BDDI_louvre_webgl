@@ -120,13 +120,22 @@
 						}else if (i == 1){
 							mod.traverse( function ( child ) {
 
-							if ( child.isMesh ) child.material = shinningMaterial;
+							// if ( child.isMesh ) child.material = shinningMaterial;
 
-							} );
-							mod.position.x = 25
-							mod.position.z = 750
+							// } );
+							// mod.position.x = 25
+							// mod.position.z = 750
+
 							// mod.scale.set(200,200,200)
-							
+
+
+								if ( child.isMesh ) child.material = specularMaterial;
+	
+								} );
+							mod.position.x = 0
+							mod.position.y = 0
+							mod.position.z = 1200
+							mod.scale.set(0.1,0.1,0.1)
 							
 						}else if (i == 2){
 							mod.traverse( function ( child ) {
@@ -146,7 +155,8 @@
 							mod.position.x = 75
 							mod.position.z = 750
 							
-						}else if (i == 4) {
+						}
+						else if (i == 4) {
 							mod.traverse( function ( child ) {
 
 							if ( child.isMesh ) child.material = shinningMaterial;
@@ -154,7 +164,8 @@
 							} );
 							mod.position.x = -75
 							mod.position.z = 650
-						}else if (i == 5) {
+						}
+						else if (i == 5) {
 							mod.traverse( function ( child ) {
 
 								if ( child.isMesh ) child.material = specularMaterial;
@@ -214,7 +225,8 @@
 				function onError() {}
 
 				var loader = new THREE.OBJLoader( manager );
-				var modelsPath = ['js/obj/sarcophage.obj', 'js/obj/hieroglyphes_coeur.obj', 'js/obj/hieroglyphes_plume.obj', 'js/obj/hieroglyphes_arbre.obj', 'js/obj/hieroglyphes_noeud.obj', 'js/obj/anubis.obj']
+				var modelsPath = ['js/obj/sarcophage.obj', 'js/obj/anubis.obj']
+				// var modelsPath = ['js/obj/sarcophage.obj', 'js/obj/hieroglyphes_coeur.obj', 'js/obj/hieroglyphes_plume.obj', 'js/obj/hieroglyphes_arbre.obj', 'js/obj/hieroglyphes_noeud.obj', 'js/obj/anubis.obj']
 				modelsPath.forEach(mod => {
 					loader.load( mod, function ( obj ) {
 						models.push(obj)
@@ -358,6 +370,10 @@
 							$('.phrase8').fadeOut(); 
 							$('.interlocuteur').fadeOut(); 
 						}, 21800);
+
+						setTimeout(function() { 
+							$('#jeu').fadeIn();
+						}, 22100);
 						
 					}
 				}
@@ -416,4 +432,11 @@
 
 
 			}
+
+
+
+
+
+
+
 
